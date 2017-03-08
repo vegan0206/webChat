@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.css">
+</head>
+
+<body>
+    <div id="webChat">
+        <form role="form" onsubmit="return false;" v-show="!sendId" class="form login">
+            <div class="form-group">
+                <label for="nickname">用户名:</label>
+                <input id="nickname" type="text" maxlength="20" class="form-control" v-model="nickname">
+            </div>
+            <div class="form-group hidden">
+                <label for="user-icon">头像</label>
+                <button id="select-icon" onclick="$('#user-icon').click()">选择头像</button>
+                <input id="user-icon" type="file" data-type="image" hidden>
+            </div>
+            <button id="submit" class="btn btn-primary btn-block" v-on:click="login">登陆或注册</button>
+        </form>
+        <div v-show="sendId" class="chat-container">
+            <div class="chat-header">
+                <p>
+                    <b>用户昵称：<span v-text="nickname"></span></b>
+                </p>
+            </div>
+            <div class="chat-body">
+                <div id="contacts" class="contacts">
+                    <ul class="list-group">
+                        <li v-for="item in contacts" class="list-group-item contacts-list" v-on:click="getMsgList(item)">
+                            <a href="javascript:;" v-text="item.nickname"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="chat-window">
+                    <!-- 联系消息列表 -->
+                    <div class="chat-message-container">                        
+                        <ul class="list-group">
+                            <li v-for="item in message" class="list-group-item message-list" v-bind:class="{'text-right': item.sendId == sendId}" v-on:click="currentTargetId = item.userId">{{item.msgData}}</li>
+                        </ul>
+                    </div>
+                    <!-- 发送消息 -->                    
+                    <div class="chat-input input-group" v-if="currentTargetId != 0">
+                        <textarea class="form-control input-message" v-model="msgData"></textarea>
+                        <button type="button" class="btn btn-primary pull-right send-btn" v-on:click="sendMsg">发送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="/javascripts/common/jquery-3.0.0.min.js"></script>
+    <script src="/javascripts/bootstrap/bootstrap.js"></script> -->
+    <script src="/javascripts/common/socket.io-1.4.5.js"></script>
+    <script src="/javascripts/common/vue.js"></script>
+    <script src="/javascripts/chat.js"></script>
+</body>
+
+</html>

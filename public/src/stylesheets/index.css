@@ -1,0 +1,54 @@
+/*登陆框样式*/
+.login{
+    width: 200px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: 50px auto;
+    padding: 20px;
+}
+/*聊天框样式*/
+.chat-container{
+    width: 642px;
+    height: 540px;
+    border: 1px solid #ddd;
+    position: fixed;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.contacts{
+    width: 200px;
+    height: 500px;
+    overflow:hidden;
+    float: left;
+}
+.contacts-list{
+    cursor: pointer;
+}
+.chat-window{
+    width: 400px;
+    height: 480px;
+    padding: 20px 10px;
+    border: 1px solid #03a9f5;
+    float: left;
+}
+.chat-message-container{
+    width: 100%;
+    height: 340px;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.chat-input{
+    width: 100%;
+}
+.input-message{
+    width: 100%;
+    height: 40px;
+    padding: 6px;
+    margin-top: 20px;
+}
+.send-btn{
+    margin-top: 10px;
+}

@@ -1,0 +1,22 @@
+extends ../layout/layout
+
+block content
+	h1#webChat
+	div.msg
+		p
+			| nickname:
+			input#nickname(type="text")
+		p
+			button#submit 登陆 | 注册
+		p
+			| recvId:
+			input#recvId(type="text")
+		p
+			| msg:
+			input#msg-data(type="text")
+		button#msg-btn 提交
+	script(src="/javascripts/common/jquery-3.0.0.min.js")
+	script(src="/javascripts/common/socket.io-1.4.5.js")
+	script(src="/javascripts/common/vue.js")
+	script(src="/javascripts/chat.js")
+			

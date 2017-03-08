@@ -1,0 +1,22 @@
+1. 消息表设计
+{
+    id: 消息id
+    isSend: 消息发送状态 （Y:N）
+    isRead: 消息阅读状态 （Y:N）
+    sendId: 发送者id
+    recvId: 接受者id
+    msgData: 消息内容
+    msgType: 消息类型(默认1) 1: 文本类型 2: 附件类型
+    msgTime: Date.now()
+}
+
+2. 用户表设计
+{
+	userId: 用户id
+    nickname: 用户昵称
+    contacts: 联系人列表
+    groups: 联系人分组列表
+    messages: 聊天消息记录
+    unreadMsg: 未读消息记录(存放消息id)
+    userImg: 用户头像
+}
