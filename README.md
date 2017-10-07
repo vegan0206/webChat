@@ -1,4 +1,5 @@
 # webChat
+基于nodejs+mongoDB+socket.io+vue实现的一款点对点聊天系统
 **功能介绍：** 这是一个基于nodejs+mongoDB+socket.io+vue实现的一款点对点聊天系统。由于开发需要，引进gulp和browser-sync，实时查看编写效果。由于没有做搜索联系人功能，系统默认配置了一个名为admin的用户，登陆的用户都会和admin成为彼此的好友。用于测试发送接受消息。
 
 **已完成的功能：**
